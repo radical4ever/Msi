@@ -27,13 +27,20 @@ stages:
     type: apt
     source:
       packages:
-      - vim
+      - build-essential
+      - linux-headers-generic
+      - git
+      - make
+      - wget
 
-  - name: example-commands # Sample module demonstrating the Shell module with custom commands
-    type: shell
-    commands:
-    - echo Example output
+  - name: example-make-project
+    type: make
+    buildflags: "all"
+    source:
+      url: "https://github.com/BeardOverflow/msi-ec/tarball/main"
+      type: tar
 
+      
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
     includes:
