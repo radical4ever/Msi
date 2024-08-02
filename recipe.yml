@@ -31,6 +31,7 @@ stages:
       - linux-headers-generic
       - git
       - make
+      - dpkg
       - wget
 
   - name: Build and Install
